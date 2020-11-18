@@ -1,25 +1,19 @@
 <div class="container">
   <h1>All Our Flats <%= @flats.count %></h1>
-  <ul>
-      <% @flats.each do |flat| %>
-      <li><strong><%= restaurant.name %></strong></li>
-        <ul>
-          <li><%= restaurant.category %></li>
-          <li><%= restaurant.address %></li>
-          <li>+<%= restaurant.phone_number %></li>
-          <li><%= link_to 'More Info', restaurant %></li>
-        </ul>
-      <% end %>
-      <div class="button"><%= link_to 'Add New Restaurant', new_restaurant_path %></div>
-    </ul>
-</div>
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title"><%= flat.name %></h5>
-    <h6 class="card-subtitle mb-2 text-muted"><%= flat.address %></h6>
-    <p class="card-text"><%= flat.description %></p>
-    <
-    <%= link_to 'More Info', flat %>
-    <a href="#" class="card-link">Another link</a>
+  <div class="d-flex justify-content-around">
+    <% @flats.each do |flat| %>
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title"><%= flat.name %></h5>
+          <h6 class="card-subtitle mb-2 text-muted"><%= flat.address %></h6>
+            <i class="fas fa-users"><%= flat.number_of_guests %></i>
+            <i class="fab fa-btc"><%= flat.price_per_night %></i>
+        </div>
+        <div class="card-footer text-muted">
+          <%= link_to 'More Info', flat %>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
+

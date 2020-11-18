@@ -1,2 +1,35 @@
-<h1>Flats#show</h1>
-<p>Find me in app/views/flats/show.html.erb</p>
+<%= render 'navbar', flat: @flats %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title"><%= @flat.name %></h2>
+          <h5 class="card-subtitle mb-2 text-muted"><%= @flat.address %></h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-8">
+      <div class="card ">
+        <div class="card-body">
+          <h4 class="card-title">A bit more about this flat...</h4>
+          <p class="card-text"><%= @flat.description %></p>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+
+
+
+
+
+
+</div>
