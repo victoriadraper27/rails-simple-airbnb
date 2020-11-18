@@ -6,11 +6,13 @@
         <div class="card-body">
           <h5 class="card-title"><%= flat.name %></h5>
           <h6 class="card-subtitle mb-2 text-muted"><%= flat.address %></h6>
-            <i class="fas fa-users"><%= flat.number_of_guests %></i>
-            <i class="fab fa-btc"><%= flat.price_per_night %></i>
+            <i class="fas fa-users"> <%= flat.number_of_guests %></i>
+            <i class="fab fa-btc"> <%= flat.price_per_night %></i>
         </div>
         <div class="card-footer text-muted">
-          <%= link_to 'More Info', flat %>
+          <%= link_to 'More Info', flat, class: "text-primary"  %>
+          <%= link_to 'Edit', edit_flat_path(flat), class: "text-warning" %>
+          <%= link_to 'Remove', flats_path, class: "text-danger", method: :delete, data: {confirm: 'Are you sure?'} %>
         </div>
       </div>
     <% end %>

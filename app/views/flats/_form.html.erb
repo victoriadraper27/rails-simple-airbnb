@@ -1,0 +1,21 @@
+  <form>
+    <div class="form-group">
+      <%= simple_form_for(@flat) do |f| %>
+        <%= f.error_notification %>
+        <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+        <div class="form-inputs">
+          <%= f.input :name %>
+          <%= f.input :address %>
+          <%= f.input :description %>
+          <%= f.input :number_of_guests, collection: 1..9 %>
+          <%= f.input :price_per_night, collection: 1..650  %>
+        </div>
+
+        <div class="form-actions">
+          <%= f.button :submit, class: "btn btn-primary" %>
+          <%= link_to 'Cancel', flats_path, class: "btn btn-danger" %>
+        </div>
+      <% end %>
+    </div>
+  </form>
